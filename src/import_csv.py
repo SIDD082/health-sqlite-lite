@@ -1,9 +1,10 @@
 import pandas as pd
 from sqlalchemy import create_engine, text
+from pathlib import Path
 
 
-DB_PATH = "./clinic_simple.db"
-CSV_PATH = "./data/patients.csv"
+DB_PATH = Path("./clinic_simple.db")
+CSV_PATH = Path("./data/patients.csv")
 
 
 def main():
