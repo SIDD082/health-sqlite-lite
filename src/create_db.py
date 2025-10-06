@@ -1,24 +1,55 @@
+# #import sqlite3
+
+# # create a simple SQLite database and a table
+# sqlite3.connect('sidds.db')
+
+
+
+
+
+
+# # connect to the database
+# conn = sqlite3.connect('sidds.db')
+
+# # create a cursor object which allows us to execute SQL commands
+# cursor = conn.cursor()
+
+# # create a X with raw sql commands
+# cursor.execute('''SELECT * FROM patients''')
+
+# # commit the changes
+# conn.commit()
+
+# # close the connection
+# conn.close()
+
 import sqlite3
+
 from pathlib import Path
 
-# Get the absolute path of the script's directory
-#SCRIPT_DIR = Path(__file__).parent.parent.absolute()
+# Paths
+db_path = Path(r"C:\Users\siddi\Desktop\PYTHON\health-sqlite-lite\health-sqlite-lite\clinic_simple.db")
 
-# Define paths relative to the script directory
-DB_PATH = Path("clinic_simple.db")
-CSV_PATH = Path("data" / "patients.csv")
-SCHEMA_PATH = Path("sql" / "schema.sql")
+schema_path = Path(r"C:\Users\siddi\Desktop\PYTHON\health-sqlite-lite\health-sqlite-lite\sql\schema.sql")
 
-def main():
-    # Read the schema SQL file
-    schema_sql = SCHEMA_PATH.read_text(encoding="utf-8")
+# Connect to DB
 
-    # Create (or overwrite) the database and apply the schema.
-    with sqlite3.connect(DB_PATH) as conn:
-        conn.executescript(schema_sql)
-        conn.commit()
+conn = sqlite3.connect(db_path)
 
-    print(f"Created database: {DB_PATH}")
+cursor = conn.cursor()
 
-if __name__ == "__main__":
-    main()
+# Run schema
+
+with open(schema_path, "r") as f:
+
+    schema_sql = f.read()
+
+cursor.executescript(schema_sql)
+
+conn.commit()
+
+conn.close()
+
+print(" Database created with schema applied")
+
+ 
