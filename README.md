@@ -53,11 +53,12 @@ SQLAlchemy
 ![SQLite Result](Images/ASQL.png)
 500 rows returned 
 
-![Python Result]()   
+![Python Result](Images/Apython.png)   
 
 2. **Top primary diagnoses by count**
 
 ![SQLite Result](Images/BSQL.png)
+![Python Result](Images/Bpython.png)
 
 Top primart ICD10 diagnosis was I10
 
@@ -66,18 +67,18 @@ Top primart ICD10 diagnosis was I10
 3. **Office-visit CPTs since Jan 1, 2025 (CPT codes starting with 992)**
 
 ![SQLite Result](Images/CSQL.png)
-![Python Result]() 
+![Python Result](Images/Cpython.png) 
 
 4. **Age (approx) at last visit for the 10 oldest patients**
 
 ![SQLite Result](Images/DSQL.png)
 
 Among the 10 oldest patients, the approx age was 85 at their last visit.
-![Python Result]() 
+![Python Result](Images/Dpython.png) 
 
-5. **Quick data quality check: any blank codes?**
+1. **Quick data quality check: any blank codes?**
 
 ![SQLite Result](Images/ESQL.png)
 0 blank rows identified.
 
-![Python Result]()
+![Python Result](Images/Epython.png)

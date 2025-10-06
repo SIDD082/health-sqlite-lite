@@ -32,7 +32,7 @@ import pandas as pd
 from sqlalchemy import create_engine
  
 # Load CSV
-df = pd.read_csv("health-sqlite-lite\data\patients.csv")
+df = pd.read_csv("data/patients.csv")
  
 # Connect to SQLite
 engine = create_engine("sqlite:///clinic_simple.db")
