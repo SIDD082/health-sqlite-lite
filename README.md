@@ -1,4 +1,3 @@
-# health-sqlite-lite project
 ## Project Overview  
 A lightweight SQLite workflow for managing patient data. Includes schema creation, CSV import, and diagnostic SQL queries. Designed for clarity, reproducibility, and modularity.
 
@@ -7,14 +6,16 @@ A lightweight SQLite workflow for managing patient data. Includes schema creatio
 ```
 Health-SQLite-Lite/
 ├── clinic_simple.db         # Generated SQLite database  
+├── images/                  # png files
 ├── data/                    # Patient CSV file  
 │   └── patients.csv  
 ├── sql/                     # Schema and analysis queries  
 │   └── analysis.sql  
 │   └── schema.sql  
-├── src/                     # Python scripts for DB creation and data import  
+├── src/                     # Python scripts for DB creation and data import  # Anaysis results
 │   ├── create_db.py  
 │   └── import_csv.py  
+│   └── analysis.py  
 └── requirements.txt         # Python dependencies  
 ```
 
@@ -40,8 +41,43 @@ Health-SQLite-Lite/
    Open `clinic_simple.db` in [DB Browser for SQLite](https://sqlitebrowser.org/) and run the query in `sql/analysis.sql`.
 
 ---
-## `requirements.txt`
+## `Requirements.txt`
 ```txt
 Pandas
 SQLAlchemy
 ```
+
+## `Analysis: SQLite verus Python Results Output`
+1. **Row Count** 
+
+![SQLite Result](Images/ASQL.png)
+500 rows returned 
+
+![Python Result]()   
+
+2. **Top primary diagnoses by count**
+
+![SQLite Result](Images/BSQL.png)
+
+Top primart ICD10 diagnosis was I10
+
+![Python Result]()
+
+3. **Office-visit CPTs since Jan 1, 2025 (CPT codes starting with 992)**
+
+![SQLite Result](Images/CSQL.png)
+![Python Result]() 
+
+4. **Age (approx) at last visit for the 10 oldest patients**
+
+![SQLite Result](Images/DSQL.png)
+
+Among the 10 oldest patients, the approx age was 85 at their last visit.
+![Python Result]() 
+
+5. **Quick data quality check: any blank codes?**
+
+![SQLite Result](Images/ESQL.png)
+0 blank rows identified.
+
+![Python Result]()
