@@ -62,7 +62,7 @@ SQLAlchemy
 
 Top primart ICD10 diagnosis was I10
 
-![Python Result]()
+
 
 3. **Office-visit CPTs since Jan 1, 2025 (CPT codes starting with 992)**
 
